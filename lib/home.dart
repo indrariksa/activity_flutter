@@ -1,6 +1,7 @@
 import 'package:dicoding_final/appbar.dart';
 import 'package:dicoding_final/drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:dicoding_final/model/datamodel.dart';
 
 var informationTextStyle = const TextStyle(fontFamily: 'Staatliches');
 
@@ -20,7 +21,7 @@ class Home extends StatelessWidget {
             Container(
               margin: const EdgeInsets.only(top: 16.0),
               child: const Text(
-                'Kegiatan Kampus',
+                'Selamat Datang di Kegiatan Kampus',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 30.0,
@@ -41,41 +42,78 @@ class Home extends StatelessWidget {
             ),
             SizedBox(
               height: 150,
-              child: ListView(
+              child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.asset('assets/img/home1.jpeg'),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.asset('assets/img/home2.png'),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.asset('assets/img/home3.jpg'),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.asset('assets/img/home4.jpg'),
-                    ),
-                  ),
-                ],
+                itemCount: activityDoList.length,
+                itemBuilder: (context, index) {
+                  return _buildActivityCard(activityDoList[index]);
+                },
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildActivityCard(activityDo activity) {
+    return Container(
+      width: 250,
+      margin: const EdgeInsets.all(8.0),
+      child: Card(
+        elevation: 4.0,
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      activity.activityName,
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      activity.location,
+                      style: TextStyle(
+                        fontSize: 14.0,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    SizedBox(height: 8.0),
+                    Image.asset(
+                      activity.imageAsset,
+                      height: 100,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
+                    SizedBox(height: 8.0),
+                    Text(
+                      activity.activityDescription,
+                      style: TextStyle(
+                        fontSize: 14.0,
+                      ),
+                    ),
+                    SizedBox(height: 8.0),
+                    Text(
+                      'Tanggal: ${activity.date}',
+                      style: TextStyle(
+                        fontSize: 14.0,
+                      ),
+                    ),
+                    SizedBox(height: 8.0),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -1,3 +1,4 @@
+import 'package:dicoding_final/activity_list.dart';
 import 'package:dicoding_final/home.dart';
 import 'package:dicoding_final/kegiatan.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,7 @@ void main() {
         '/home': (context) => Home(),
         '/activity': (context) => ActivityPage(),
         '/galeri': (context) => GaleriPage(),
+        '/activity_list': (context) => MainScreen(),
       },
       home: Home(),
     ),

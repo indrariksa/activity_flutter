@@ -35,6 +35,13 @@ class MyDrawer extends StatelessWidget {
             },
           ),
           ListTile(
+            title: const Text('List Kegiatan'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/activity_list');
+            },
+          ),
+          ListTile(
             title: const Text('Galeri'),
             onTap: () {
               Navigator.pop(context);

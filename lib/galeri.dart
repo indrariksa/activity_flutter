@@ -13,6 +13,12 @@ class _GaleriPageState extends State<GaleriPage> {
     'gambar2.jpg',
     'gambar3.jpeg',
     'gambar4.jpg',
+    'gambar5.jpg',
+    'gambar6.jpg',
+    'gambar7.jpeg',
+    'gambar8.jpg',
+    'gambar9.jpg',
+    'gambar10.jpg'
   ];
 
   @override
