@@ -1,13 +1,15 @@
+import 'package:dicoding_final/appbar.dart';
 import 'package:dicoding_final/drawer.dart';
+import 'package:dicoding_final/main.dart';
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:intl/intl.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+class ActivityPage extends StatefulWidget {
+  const ActivityPage({Key? key}) : super(key: key);
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _ActivityPageState createState() => _ActivityPageState();
 }
 
 class Kegiatan {
@@ -21,7 +23,7 @@ class Kegiatan {
       this.date, this.fileName);
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _ActivityPageState extends State<ActivityPage> {
   final TextEditingController _activityNameController = TextEditingController();
   final TextEditingController _activityDescriptionController =
       TextEditingController();
@@ -173,35 +175,7 @@ class _MyHomePageState extends State<MyHomePage> {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Kegiatan'),
-          centerTitle: true,
-          actions: [
-            IconButton(
-              icon: Icon(Icons.info),
-              onPressed: () {
-                showDialog(
-                  context: context,
-                  builder: (context) {
-                    return AlertDialog(
-                      title: Text('Deskripsi'),
-                      content: Text(
-                          'Ini adalah Aplikasi Kegiatan untuk Proyek Akhir Dicoding.'),
-                      actions: [
-                        TextButton(
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                          child: Text('Tutup'),
-                        ),
-                      ],
-                    );
-                  },
-                );
-              },
-            ),
-          ],
-        ),
+        appBar: CustomAppBar(title: 'Insert Kegiatan'),
         drawer: const MyDrawer(),
         body: Padding(
           padding: const EdgeInsets.all(16.0),

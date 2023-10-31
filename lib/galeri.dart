@@ -1,3 +1,4 @@
+import 'package:dicoding_final/appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:dicoding_final/detail_page.dart';
 
@@ -17,9 +18,7 @@ class _GaleriPageState extends State<GaleriPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Galeri Kegiatan'),
-      ),
+      appBar: CustomAppBar(title: 'Galeri Kegiatan'),
       body: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,

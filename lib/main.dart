@@ -8,10 +8,10 @@ void main() {
     MaterialApp(
       routes: {
         '/home': (context) => Home(),
-        '/contact': (context) => MyHomePage(),
+        '/activity': (context) => ActivityPage(),
         '/galeri': (context) => GaleriPage(),
       },
-      home: MyHomePage(),
+      home: Home(),
     ),
   );
 }
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      home: const Home(),
     );
   }
 }
