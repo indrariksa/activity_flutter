@@ -32,11 +32,11 @@ class Home extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(16.0),
               child: const Text(
-                'Kegiatan kampus adalah tempat untuk mahasiswa dan staf universitas berkumpul dan berpartisipasi dalam berbagai kegiatan akademik dan sosial. Ini adalah pusat inti dalam pengalaman perguruan tinggi, tempat untuk belajar, berkolaborasi, dan berbagi pengetahuan.',
-                textAlign: TextAlign.center,
+                'Tidak hanya sebagai tempat untuk belajar, kegiatan kampus adalah panggung di mana mahasiswa dan staf universitas dapat menggali potensi, berpartisipasi dalam berbagai kegiatan akademik dan sosial, dan merayakan keragaman budaya. Ini adalah lingkungan yang mempromosikan pertumbuhan pribadi, memupuk kreativitas, dan menginspirasi inovasi. Selain itu, kegiatan kampus adalah wadah untuk membangun hubungan, menjalin persahabatan, dan mengembangkan keterampilan kepemimpinan. Dengan berbagai seminar, lomba, festival, dan kegiatan lainnya, kegiatan kampus menjadi jendela yang memperluas wawasan dan memperkaya pengalaman mahasiswa selama masa studi mereka di perguruan tinggi.',
+                textAlign: TextAlign.justify,
                 style: TextStyle(
                   fontSize: 16.0,
-                  fontFamily: 'Staatliches',
+                  // fontFamily: 'Staatliches',
                 ),
               ),
             ),

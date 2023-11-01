@@ -249,7 +249,7 @@ class _ActivityPageState extends State<ActivityPage> {
                   ElevatedButton(
                     onPressed: _addKegiatan,
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.deepPurple[700],
+                      backgroundColor: Colors.deepOrange[800],
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),
                       ),
@@ -277,7 +277,7 @@ class _ActivityPageState extends State<ActivityPage> {
                   itemBuilder: (context, index) {
                     final kegiatan = _kegiatan[index];
                     return ListTile(
-                      leading: Icon(Icons.person),
+                      leading: Icon(Icons.local_activity_rounded),
                       title: Text(kegiatan.activityName.toUpperCase()),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
