@@ -1,6 +1,5 @@
 import 'package:dicoding_final/appbar.dart';
 import 'package:dicoding_final/drawer.dart';
-import 'package:dicoding_final/main.dart';
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:intl/intl.dart';
