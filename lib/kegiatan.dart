@@ -71,11 +71,6 @@ class _ActivityPageState extends State<ActivityPage> {
     final location = _locationController.text.trim();
     final date = _activityDateController.text;
     final fileName = _fileInputController.text;
-    print('Name of Activity: $activityName');
-    print('Description of Activity: $activityDescription');
-    print('Location: $location');
-    print('Date: $date');
-    print('File Name: $fileName');
 
     if (activityName.isEmpty ||
         activityDescription.isEmpty ||
@@ -109,14 +104,14 @@ class _ActivityPageState extends State<ActivityPage> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Error'),
+          title: const Text('Error'),
           content: Text(message),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('OK'),
+              child: const Text('OK'),
             ),
           ],
         );
@@ -141,14 +136,15 @@ class _ActivityPageState extends State<ActivityPage> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Delete Kegiatan'),
-          content: Text('Apakah Anda yakin ingin menghapus kegiatan ini?'),
+          title: const Text('Delete Kegiatan'),
+          content:
+              const Text('Apakah Anda yakin ingin menghapus kegiatan ini?'),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Batal'),
+              child: const Text('Batal'),
             ),
             TextButton(
               onPressed: () {
@@ -158,7 +154,7 @@ class _ActivityPageState extends State<ActivityPage> {
                 });
                 Navigator.of(context).pop();
               },
-              child: Text('Hapus'),
+              child: const Text('Hapus'),
             ),
           ],
         );
@@ -174,20 +170,20 @@ class _ActivityPageState extends State<ActivityPage> {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        appBar: CustomAppBar(title: 'Insert Kegiatan'),
+        appBar: const CustomAppBar(title: 'Insert Kegiatan'),
         drawer: const MyDrawer(),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Center(
+              const Center(
                 child: Text(
                   'Buat Kegiatan Baru',
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(
@@ -195,21 +191,21 @@ class _ActivityPageState extends State<ActivityPage> {
                     children: [
                       TextField(
                         controller: _activityNameController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           labelText: 'Nama Kegiatan',
                           hintText: 'Masukkan nama kegiatan',
                         ),
                       ),
                       TextField(
                         controller: _activityDescriptionController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           labelText: 'Deskripsi Kegiatan',
                           hintText: 'Masukkan deskripsi kegiatan',
                         ),
                       ),
                       TextField(
                         controller: _locationController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           labelText: 'Lokasi Kegiatan',
                           hintText: 'Masukkan lokasi kegiatan',
                         ),
@@ -220,7 +216,7 @@ class _ActivityPageState extends State<ActivityPage> {
                           labelText: 'Tanggal Kegiatan',
                           hintText: 'Pilih tanggal',
                           suffixIcon: IconButton(
-                            icon: Icon(Icons.calendar_today),
+                            icon: const Icon(Icons.calendar_today),
                             onPressed: () => _selectDate(context),
                           ),
                         ),
@@ -232,7 +228,7 @@ class _ActivityPageState extends State<ActivityPage> {
                           labelText: 'File',
                           hintText: 'Pilih file',
                           suffixIcon: IconButton(
-                            icon: Icon(Icons.attach_file),
+                            icon: const Icon(Icons.attach_file),
                             onPressed: () => _pickFile(),
                           ),
                         ),
@@ -242,7 +238,7 @@ class _ActivityPageState extends State<ActivityPage> {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -253,12 +249,12 @@ class _ActivityPageState extends State<ActivityPage> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),
                       ),
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 10),
                     ),
                     child: Text(
                       editingIndex == -1 ? 'Submit' : 'Update',
-                      style: TextStyle(fontSize: 14),
+                      style: const TextStyle(fontSize: 14),
                     ),
                   ),
                 ],
@@ -277,7 +273,7 @@ class _ActivityPageState extends State<ActivityPage> {
                   itemBuilder: (context, index) {
                     final kegiatan = _kegiatan[index];
                     return ListTile(
-                      leading: Icon(Icons.local_activity_rounded),
+                      leading: const Icon(Icons.local_activity_rounded),
                       title: Text(kegiatan.activityName.toUpperCase()),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -292,13 +288,13 @@ class _ActivityPageState extends State<ActivityPage> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           IconButton(
-                            icon: Icon(Icons.edit),
+                            icon: const Icon(Icons.edit),
                             onPressed: () {
                               _editKegiatan(index);
                             },
                           ),
                           IconButton(
-                            icon: Icon(Icons.delete),
+                            icon: const Icon(Icons.delete),
                             onPressed: () {
                               _deleteKegiatan(index);
                             },

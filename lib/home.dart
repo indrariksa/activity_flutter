@@ -11,7 +11,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: 'Homepage'),
+      appBar: const CustomAppBar(title: 'Homepage'),
       drawer: const MyDrawer(),
       body: SingleChildScrollView(
         child: Column(
@@ -84,40 +84,40 @@ class Home extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       activity.activityName,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     Text(
                       activity.location,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 14.0,
                         color: Colors.grey,
                       ),
                     ),
-                    SizedBox(height: 8.0),
+                    const SizedBox(height: 8.0),
                     Image.asset(
                       activity.imageAsset,
                       height: 100,
                       width: double.infinity,
                       fit: BoxFit.cover,
                     ),
-                    SizedBox(height: 8.0),
+                    const SizedBox(height: 8.0),
                     Text(
                       activity.activityDescription,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 14.0,
                       ),
                     ),
-                    SizedBox(height: 8.0),
+                    const SizedBox(height: 8.0),
                     Text(
                       'Tanggal: ${activity.date}',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 14.0,
                       ),
                     ),
-                    SizedBox(height: 8.0),
+                    const SizedBox(height: 8.0),
                   ],
                 ),
               ),

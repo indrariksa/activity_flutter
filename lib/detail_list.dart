@@ -40,7 +40,7 @@ class DetailScreen extends StatelessWidget {
               child: Text(
                 place.activityName,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 30.0,
                   fontFamily: 'Staatliches',
                 ),
@@ -89,7 +89,7 @@ class DetailScreen extends StatelessWidget {
             ),
             Container(
               padding: const EdgeInsets.all(16.0),
-              child: Text(
+              child: const Text(
                 'Dokumentasi Kegiatan',
                 textAlign: TextAlign.center,
                 style: TextStyle(

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class DetailPage extends StatelessWidget {
   final String selectedImage;
 
-  DetailPage({required this.selectedImage});
+  const DetailPage({Key? key, required this.selectedImage}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +20,11 @@ class DetailPage extends StatelessWidget {
         ),
         Container(
           height: MediaQuery.of(context).size.height * 0.5,
-          padding: EdgeInsets.all(40.0),
+          padding: const EdgeInsets.all(40.0),
           width: MediaQuery.of(context).size.width,
           decoration:
-              BoxDecoration(color: Color.fromRGBO(115, 142, 211, 0.898)),
-          child: Center(
+              const BoxDecoration(color: Color.fromRGBO(115, 142, 211, 0.898)),
+          child: const Center(
             child: Text(
               'Selamat datang di halaman detail',
               style: TextStyle(
@@ -42,7 +42,7 @@ class DetailPage extends StatelessWidget {
             onTap: () {
               Navigator.pop(context);
             },
-            child: Icon(Icons.arrow_back, color: Colors.white),
+            child: const Icon(Icons.arrow_back, color: Colors.white),
           ),
         ),
       ],
@@ -52,7 +52,7 @@ class DetailPage extends StatelessWidget {
       body: Column(
         children: <Widget>[
           topContent,
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Center(
             child: Image.asset(
               selectedImage,
@@ -60,7 +60,7 @@ class DetailPage extends StatelessWidget {
               height: 200,
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
         ],
       ),
     );

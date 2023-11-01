@@ -8,12 +8,12 @@ void main() {
   runApp(
     MaterialApp(
       routes: {
-        '/home': (context) => Home(),
-        '/activity': (context) => ActivityPage(),
+        '/home': (context) => const Home(),
+        '/activity': (context) => const ActivityPage(),
         '/galeri': (context) => GaleriPage(),
-        '/activity_list': (context) => MainScreen(),
+        '/activity_list': (context) => const MainScreen(),
       },
-      home: Home(),
+      home: const Home(),
     ),
   );
 }

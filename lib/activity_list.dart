@@ -10,7 +10,7 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: 'List Kegiatan'),
+      appBar: const CustomAppBar(title: 'List Kegiatan'),
       drawer: const MyDrawer(),
       body: ListView.builder(
         itemBuilder: (context, index) {

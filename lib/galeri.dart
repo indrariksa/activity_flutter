@@ -24,9 +24,9 @@ class _GaleriPageState extends State<GaleriPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: 'Galeri Kegiatan'),
+      appBar: const CustomAppBar(title: 'Galeri Kegiatan'),
       body: GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
         ),
         itemCount: gambar.length,
@@ -61,8 +61,8 @@ class _GaleriPageState extends State<GaleriPage> {
                 width: 200,
                 height: 200,
               ),
-              SizedBox(height: 10),
-              Text("Cek Detail Gambar?"),
+              const SizedBox(height: 10),
+              const Text("Cek Detail Gambar?"),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
@@ -71,13 +71,13 @@ class _GaleriPageState extends State<GaleriPage> {
                       Navigator.pop(context);
                       _navigateToDetailPage(context, image);
                     },
-                    child: Text('Ya'),
+                    child: const Text('Ya'),
                   ),
                   ElevatedButton(
                     onPressed: () {
                       Navigator.pop(context);
                     },
-                    child: Text('Tidak'),
+                    child: const Text('Tidak'),
                   ),
                 ],
               ),
